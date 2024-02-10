@@ -23,3 +23,9 @@ loss_fn = tf.keras.losses.SparseCategoricalCrossentropy(from_logits=True)
 
 loss = loss_fn(y_train[:1], predictions).numpy()
 print("LOSS:", loss)
+
+model.compile(
+  optimizer='adam',
+  loss=loss_fn,
+  metrics=['accuracy']
+)
