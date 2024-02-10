@@ -18,3 +18,8 @@ print("PREDICTIONS:", predictions)
 
 probabilities = tf.nn.softmax(predictions).numpy()
 print("PROBABILITES:", probabilities)
+
+loss_fn = tf.keras.losses.SparseCategoricalCrossentropy(from_logits=True)
+
+loss = loss_fn(y_train[:1], predictions).numpy()
+print("LOSS:", loss)
